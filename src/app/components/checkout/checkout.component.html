@@ -121,7 +121,7 @@
         <div class="order-products">
           <div class="order-col" *ngFor="let c of cartData.data;">
             <div>{{c.numInCart}}x {{c.product.name}}</div>
-            <div>{{(c.product.price*c.numInCart) | currency:'USD'}}</div>
+            <div>{{(c.product.price*c.numInCart) | currency:'TND'}}</div>
           </div>
         </div>
         <div class="order-col">
@@ -130,7 +130,7 @@
         </div>
         <div class="order-col dropdown-divider">
           <div><strong>TOTAL</strong></div>
-          <div><strong class="order-total">{{cartTotal | currency:'USD'}}</strong></div>
+          <div><strong class="order-total">{{cartTotal | currency:'TND'}}</strong></div>
         </div>
       </div>
       <div class="payment-method">
@@ -138,30 +138,30 @@
           <input type="radio" name="payment" id="payment-1">
           <label for="payment-1">
             <span></span>
-            Direct Bank Transfer
+            Virement Bancaire
           </label>
           <div class="caption">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>IBAN:6262256456465</p>
           </div>
         </div>
         <div class="input-radio">
           <input type="radio" name="payment" id="payment-2">
           <label for="payment-2">
             <span></span>
-            Cheque Payment
+            E-dinar
           </label>
           <div class="caption">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>E-dinar Limit is 3000 TND</p>
           </div>
         </div>
         <div class="input-radio">
           <input type="radio" name="payment" id="payment-3">
           <label for="payment-3">
             <span></span>
-            Paypal System
+            Carte de crédit bancaire
           </label>
           <div class="caption">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Bientot Disponible</p>
           </div>
         </div>
       </div>
