@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {CartService} from "../../services/cart.service";
-import {CartModelServer} from "../../models/cart.model";
-import {Router} from "@angular/router";
-import {OrderService} from "../../services/order.service";
-import {NgxSpinnerService} from "ngx-spinner";
-import {FormBuilder, NgForm, Validators} from "@angular/forms";
+import {CartService} from '../../services/cart.service';
+import {CartModelServer} from '../../models/cart.model';
+import {Router} from '@angular/router';
+import {OrderService} from '../../services/order.service';
+import {NgxSpinnerService} from 'ngx-spinner';
+import {FormBuilder, NgForm, Validators} from '@angular/forms';
 
 @Component({
   selector: 'mg-checkout',
@@ -13,8 +13,8 @@ import {FormBuilder, NgForm, Validators} from "@angular/forms";
 })
 export class CheckoutComponent implements OnInit {
   cartData: CartModelServer;
-  cartTotal: Number;
-  showSpinner: Boolean;
+  cartTotal: number;
+  showSpinner: boolean;
   checkoutForm: any;
   constructor(private cartService: CartService,
               private orderService: OrderService,
@@ -45,7 +45,7 @@ export class CheckoutComponent implements OnInit {
     });
 
 
-  //console.log(this.checkoutForm.value);
+  // console.log(this.checkoutForm.value);
 
   }
 }

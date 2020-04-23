@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ProductService} from "../../services/product.service";
-import {ProductModelServer, serverResponse} from "../../models/product.model";
-import {CartService} from "../../services/cart.service";
-import {Router} from "@angular/router";
+import {ProductService} from '../../services/product.service';
+import {ProductModelServer, serverResponse} from '../../models/product.model';
+import {CartService} from '../../services/cart.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'mg-home',
@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private productService: ProductService,
               private cartService: CartService,
-              private router:Router) {
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -26,11 +26,11 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  AddProduct(id: Number) {
+  AddProduct(id: number) {
     this.cartService.AddProductToCart(id);
   }
 
-  selectProduct(id: Number) {
+  selectProduct(id: number) {
     this.router.navigate(['/product', id]).then();
   }
 }

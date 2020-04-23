@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {CartService} from "../../services/cart.service";
-import {Observable} from "rxjs";
-import {CartModelServer} from "../../models/cart.model";
+import {CartService} from '../../services/cart.service';
+import {Observable} from 'rxjs';
+import {CartModelServer} from '../../models/cart.model';
 
 @Component({
   selector: 'mg-cart',
@@ -10,8 +10,8 @@ import {CartModelServer} from "../../models/cart.model";
 })
 export class CartComponent implements OnInit {
   cartData: CartModelServer;
-  cartTotal: Number;
-  subTotal: Number;
+  cartTotal: number;
+  subTotal: number;
 
   constructor(public cartService: CartService) {
   }
@@ -21,7 +21,7 @@ export class CartComponent implements OnInit {
      this.cartService.cartTotal$.subscribe(total => this.cartTotal = total);
   }
 
-  ChangeQuantity(id: Number, increaseQuantity: Boolean) {
+  ChangeQuantity(id: number, increaseQuantity: boolean) {
     this.cartService.UpdateCartData(id, increaseQuantity);
   }
 

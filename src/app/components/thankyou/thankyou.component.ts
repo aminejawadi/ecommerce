@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
-import {OrderService} from "../../services/order.service";
+import {Router} from '@angular/router';
+import {OrderService} from '../../services/order.service';
 
 @Component({
   selector: 'mg-thankyou',
@@ -8,18 +8,18 @@ import {OrderService} from "../../services/order.service";
   styleUrls: ['./thankyou.component.scss']
 })
 export class ThankyouComponent implements OnInit {
-  message: String;
-  orderId: Number;
+  message: string;
+  orderId: number;
   products;
   cartTotal;
   constructor(private router: Router,
               private orderService: OrderService) {
     const navigation = this.router.getCurrentNavigation();
     const state = navigation.extras.state as {
-      message: String,
+      message: string,
       products: ProductResponseModel[],
-      orderId: Number,
-      total: Number
+      orderId: number,
+      total: number
     };
 
     this.message = state.message;
@@ -36,11 +36,11 @@ export class ThankyouComponent implements OnInit {
 }
 
 interface ProductResponseModel {
-  id: Number;
-  title: String;
-  description: String;
-  price: Number;
-  quantityOrdered: Number;
-  image: String;
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  quantityOrdered: number;
+  image: string;
 }
 

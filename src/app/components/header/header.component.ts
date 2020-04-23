@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {CartService} from "../../services/cart.service";
-import {CartModelServer} from "../../models/cart.model";
+import {CartService} from '../../services/cart.service';
+import {CartModelServer} from '../../models/cart.model';
 
 @Component({
   selector: 'mg-header',
@@ -9,7 +9,7 @@ import {CartModelServer} from "../../models/cart.model";
 })
 export class HeaderComponent implements OnInit {
   cartData: CartModelServer;
-  cartTotal: Number;
+  cartTotal: number;
 
   constructor(public cartService: CartService) {
   }
