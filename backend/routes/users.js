@@ -15,10 +15,6 @@ router.get('/', function (req, res) {
     }).catch(err => res.json(err));
 });
 
-/**
- * ROLE 777 = ADMIN
- * ROLE 555 = CUSTOMER
- */
 
 
 router.get('/:userId', (req, res) => {
