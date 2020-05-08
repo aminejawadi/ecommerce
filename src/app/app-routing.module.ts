@@ -7,8 +7,6 @@ import {CartComponent} from './components/cart/cart.component';
 import {CheckoutComponent} from './components/checkout/checkout.component';
 import {ProductComponent} from './components/product/product.component';
 import {ThankyouComponent} from './components/thankyou/thankyou.component';
-import {ProfileComponent} from './components/profile/profile.component';
-import {ProfileGuard} from './guard/profile.guard';
 
 
 const routes: Routes = [
@@ -32,15 +30,7 @@ const routes: Routes = [
   },
   {
     path: 'thankyou', component: ThankyouComponent
-  },
-  {
-path: 'login' , component: LoginComponent
-  },
-
-  {
-    path: 'profile' , component: ProfileComponent , canActivate: [ProfileGuard]
   }
-
 ];
 
 @NgModule({

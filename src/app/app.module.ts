@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
@@ -16,23 +17,6 @@ import {NgxSpinnerModule} from 'ngx-spinner';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ToastrModule} from 'ngx-toastr';
-import { ProfileComponent } from './components/profile/profile.component';
-import {AuthServiceConfig, GoogleLoginProvider, SocialLoginModule} from 'angularx-social-login';
-
-
-
-
-const config = new AuthServiceConfig([
-  {
-    id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider('905454530158-asrdeio24d7jo4vi9qup9bi7hj9h4bmq.apps.googleusercontent.com')
-  }
-
-]);
-export function provideConfig() {
-  return config;
-}
-
 
 @NgModule({
   declarations: [
@@ -45,8 +29,7 @@ export function provideConfig() {
     CartComponent,
     CheckoutComponent,
     ProductComponent,
-    ThankyouComponent,
-    ProfileComponent,
+    ThankyouComponent
   ],
   imports: [
     BrowserModule,
@@ -57,14 +40,10 @@ export function provideConfig() {
     NgxSpinnerModule,
     ReactiveFormsModule,
     FormsModule,
-    SocialLoginModule,
     ToastrModule.forRoot()
 
   ],
-  providers: [{
-    provide: AuthServiceConfig,
-    useFactory: provideConfig
-  }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
