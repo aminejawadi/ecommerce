@@ -13,7 +13,7 @@ const swaggerOptions = {
             title: "Shop API",
             description: "Backend Api",
             contact: {
-                name: 'Amazing Developer'
+                name: 'Amine jawadi'
             },
             servers: "http://localhost:3636"
         }
@@ -38,19 +38,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+// Import Routes
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const authRouter = require('./routes/auth');
 const orderRouter = require('./routes/order');
 
+// Define Routes
 
-/**
- * @swagger
- * /api/products:
- *   get:
- *    description: Get All Products
- *
- */
 
 app.use('/api/users', usersRouter);
 app.use('/api/products', productsRouter);

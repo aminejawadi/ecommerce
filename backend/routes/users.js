@@ -15,10 +15,8 @@ router.get('/', function (req, res) {
     }).catch(err => res.json(err));
 });
 
-/**
- * ROLE 777 = ADMIN
- * ROLE 555 = CUSTOMER
- */
+
+
 
 
 router.get('/:userId', (req, res) => {
@@ -35,9 +33,30 @@ router.get('/:userId', (req, res) => {
 });
 
 
+router.get('/validate/:email', (req, res) => {
+
+	let email = req.params.email;
+
+	database.table('users').filter({email: email})
+			.get()
+			.then(user => {
+				 if (user) {
+            res.json({user: user, status: true});
+        } else {
+            res.json({status: false, user: null});
+        }
+			})
+			.catch(err => res.json(err));
+
+
+});
+
+
+
 router.patch('/:userId', async (req, res) => {
     let userId = req.params.userId;     // Get the User ID from the parameter
 
+ 
     let user = await database.table('users').filter({id: userId}).get();
     if (user) {
 
@@ -48,7 +67,7 @@ router.patch('/:userId', async (req, res) => {
         let userUsername = req.body.username;
         let age = req.body.age;
 
-
+       
         database.table('users').filter({id: userId}).update({
             email: userEmail !== undefined ? userEmail : user.email,
             password: userPassword !== undefined ? userPassword : user.password,
