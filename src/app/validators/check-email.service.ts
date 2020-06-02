@@ -34,7 +34,7 @@ export class CheckEmailService {
             }
             return null;
           })
-        );
+        ); // PIPE ENDS HERE
     };
   }
 }

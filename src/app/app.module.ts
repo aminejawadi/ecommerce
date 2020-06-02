@@ -20,12 +20,17 @@ import {ProfileComponent} from '@app/components/profile/profile.component';
 import {AuthServiceConfig, GoogleLoginProvider, SocialLoginModule} from 'angularx-social-login';
 import {RegisterComponent} from '@app/components/register/register.component';
 import {HomeLayoutComponent} from '@app/components/home-layout/home-layout.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { PcComponent } from './components/pc/pc.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { SmartphonesComponent } from './components/smartphones/smartphones.component';
+import { AccessoiresComponent } from './components/accessoires/accessoires.component';
 
 
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider('317703959468-f4r9h88ribvfo5i9dkr6sr9bo93npoiq.apps.googleusercontent.com')
+    provider: new GoogleLoginProvider('799705726167-vn6184fsovmps0kpbg5c7jabv15r3ias.apps.googleusercontent.com')
   }
 
 ]);
@@ -47,7 +52,12 @@ export function provideConfig() {
     LoginComponent,
     ProfileComponent,
     RegisterComponent,
-    HomeLayoutComponent
+    HomeLayoutComponent,
+    AboutusComponent,
+    PcComponent,
+    ContactComponent,
+    SmartphonesComponent,
+    AccessoiresComponent
   ],
   imports: [
     BrowserModule,

@@ -35,9 +35,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  signInWithGoogle() {
-    this.userService.googleLogin();
-  }
+
 
   login(form: NgForm) {
     const email = this.email;
