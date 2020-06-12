@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-12">
       <div class="jumbotron text-center">
-        <h1 class="display-3">Thank You!</h1>
-        <p class="lead"><strong>Please check your email</strong> for order confirmation.</p>
+        <h1 class="display-3">Merci pour votre confiance à la prochaine :)</h1>
+        <p class="lead"><strong>Consulte ton email</strong> pour confirmation.</p>
         <hr>
         <p>
 
@@ -25,7 +25,7 @@
             <img [src]="p.image" alt="{{p.name}}" class="img-thumbnail" width="100px">
           </td>
           <td>{{p.name}}</td>
-          <td>{{p.price | currency:'USD'}}</td>
+          <td>{{p.price | currency:'TND'}}</td>
           <td>{{p.quantityOrdered}}</td>
         </tr>
 
@@ -33,7 +33,7 @@
           <td style="border: none;"></td>
           <td></td>
           <td>TOTAL</td>
-          <td>{{cartTotal | currency:'USD'}}</td>
+          <td>{{cartTotal | currency:'TND'}}</td>
 
         </tr>
         </tbody>

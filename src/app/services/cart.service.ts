@@ -16,7 +16,6 @@ import {NgxSpinnerService} from 'ngx-spinner';
 export class CartService {
   private serverURL = environment.SERVER_URL;
 
-  // Data variable to store the cart information on the client's local storage
   private cartDataClient: CartModelPublic = {
     total: 0,
     prodData: [{
@@ -25,7 +24,6 @@ export class CartService {
     }]
   };
 
-  // Data variable to store cart information on the server
   private cartDataServer: CartModelServer = {
     total: 0,
     data: [{
@@ -34,7 +32,6 @@ export class CartService {
     }]
   };
 
-  /* OBSERVABLES FOR THE COMPONENTS TO SUBSCRIBE*/
   cartTotal$ = new BehaviorSubject<number>(0);
   cartData$ = new BehaviorSubject<CartModelServer>(this.cartDataServer);
 
@@ -49,16 +46,14 @@ export class CartService {
     this.cartTotal$.next(this.cartDataServer.total);
     this.cartData$.next(this.cartDataServer);
 
-    //  Get the information from local storage ( if any )
+
     const info: CartModelPublic = JSON.parse(localStorage.getItem('cart'));
 
-    //  Check if the info variable is null or has some data in it
-
     if (info !== null && info !== undefined && info.prodData[0].incart !== 0) {
-      //  Local Storage is not empty and has some information
+
       this.cartDataClient = info;
 
-      //  Loop through each entry and put it in the cartDataServer object
+
       this.cartDataClient.prodData.forEach(p => {
         this.productService.getSingleProduct(p.id).subscribe((actualProductInfo: ProductModelServer) => {
           if (this.cartDataServer.data[0].numInCart === 0) {
@@ -87,7 +82,7 @@ export class CartService {
 
   AddProductToCart(id: number, quantity?: number) {
     this.productService.getSingleProduct(id).subscribe(prod => {
-      //  1. If the cart is empty
+
       if (this.cartDataServer.data[0].product === undefined) {
         this.cartDataServer.data[0].product = prod;
         this.cartDataServer.data[0].numInCart = quantity !== undefined ? quantity : 1;
@@ -105,11 +100,12 @@ export class CartService {
         });
 
       } else {
-        const index = this.cartDataServer.data.findIndex(p => p.product.id === prod.id);  // -1 or a positive value
+        const index = this.cartDataServer.data.findIndex(p => p.product.id === prod.id);
 
-        //     a. if that item is already in the cart  =>  index is positive value
+
         if (index !== -1) {
           if (quantity !== undefined && quantity <= prod.quantity) {
+            // tslint:disable-next-line:max-line-length
             this.cartDataServer.data[index].numInCart = this.cartDataServer.data[index].numInCart < prod.quantity ? quantity : prod.quantity;
           } else {
             // tslint:disable-next-line:no-unused-expression
@@ -148,7 +144,7 @@ export class CartService {
           this.cartDataClient.total = this.cartDataServer.total;
           localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
           this.cartData$.next({...this.cartDataServer});
-        }  // END OF ELSE
+        }
       }
     });
   }
@@ -202,7 +198,6 @@ export class CartService {
 
 
     } else {
-      // IF THE USER CLICKS THE CANCEL BUTTON
       return;
     }
   }

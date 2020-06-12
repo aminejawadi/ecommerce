@@ -39,13 +39,13 @@
             </form>
           </div>
         </div>
-        <!-- /SEARCH BAR -->
 
-        <!-- ACCOUNT -->
+
+
         <div class="col-md-3 clearfix">
           <div class="header-ctn">
 
-            <!-- Cart -->
+
             <div class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="cursor:pointer;">
                 <i class="fa fa-shopping-cart"></i>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="product-body">
                       <h3 class="product-name"><a href="#">{{c.product.name}}</a></h3>
-                      <h4 class="product-price"><span class="qty">{{c.numInCart}} x </span> {{c.product?.price | currency:'USD'}} </h4>
+                      <h4 class="product-price"><span class="qty">{{c.numInCart}} x </span> {{c.product?.price | currency:'TND'}} </h4>
                     </div>
                     <button class="delete" (click)="cartService.DeleteProductFromCart(i)"><i class="fa fa-close"></i></button>
                   </div>

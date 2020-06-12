@@ -3,10 +3,10 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 let conn = new Mysqli({
-    Host: 'localhost', // IP/domain name 
-    post: 3306, // port, default 3306 
-    user: 'amine jaouadi', // username
-    passwd: '123456', // password 
+    Host: 'localhost',
+    post: 3306,
+    user: 'amine jaouadi',
+    passwd: '123456', 
     db: 'dmwm'
 });
 
@@ -33,7 +33,7 @@ module.exports = {
         } else {
             return res.status(401).send("No authorization header found.");
         }
-    },    
+    },
     hasAuthFields: (req, res, next) => {
         let errors = [];
 
@@ -56,13 +56,13 @@ module.exports = {
     },
     isPasswordAndUserMatch: async (req, res, next) => {
         const myPlaintextPassword = req.body.password;
-        const myEmail = req.body.email;          
-              
+        const myEmail = req.body.email;
+
         const user = await db.table('users').filter({$or:[{ email : myEmail },{ username : myEmail }]}).get();
-		
+
         if (user) {
             const match = await bcrypt.compare(myPlaintextPassword, user.password);
-            
+
             if (match) {
                 req.username = user.username;
                 req.email = user.email;
@@ -76,7 +76,7 @@ module.exports = {
             } else {
                 res.status(401).json({message: "Username or password incorrect", status: false});
             }
-            
+
         } else {
             res.status(401).json({message: "Username or password incorrect", status: false});
         }

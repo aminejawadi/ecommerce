@@ -10,10 +10,10 @@ const swaggerUI = require('swagger-ui-express');
 const swaggerOptions = {
     swaggerDefinition: {
         info: {
-            title: "Shop API",
+            title: "Ecommerce",
             description: "Backend Api",
             contact: {
-                name: 'Amazing Developer'
+                name: 'Dmwm'
             },
             servers: "http://localhost:3636"
         }

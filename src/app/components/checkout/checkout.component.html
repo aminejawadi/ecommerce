@@ -65,7 +65,7 @@
           <div class="order-products">
             <div class="order-col" *ngFor="let c of cartData.data;">
               <div>{{c.numInCart}}x {{c.product.name}}</div>
-              <div>{{(c.product.price*c.numInCart) | currency:'USD'}}</div>
+              <div>{{(c.product.price*c.numInCart) | currency:'TND'}}</div>
             </div>
           </div>
           <div class="order-col">
@@ -74,7 +74,7 @@
           </div>
           <div class="order-col dropdown-divider">
             <div><strong>TOTAL</strong></div>
-            <div><strong class="order-total">{{cartTotal | currency:'USD'}}</strong></div>
+            <div><strong class="order-total">{{cartTotal | currency:'TND'}}</strong></div>
           </div>
         </div>
 
@@ -91,6 +91,6 @@
 
 
 <div class="text-center my-5" *ngIf="cartData.total <= 0">
-  <h4>Your Cart Is Empty</h4>
+  <h4>Votre carte est vide</h4>
   <button class="btn btn-primary btn-lg mt-3" routerLink="/">GO TO SHOP</button>
 </div>

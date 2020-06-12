@@ -3,7 +3,6 @@ const router = express.Router();
 const {database} = require('../config/helpers');
 const crypto = require('crypto');
 
-// GET ALL ORDERS
 router.get('/', (req, res) => {
     database.table('orders_details as od')
         .join([

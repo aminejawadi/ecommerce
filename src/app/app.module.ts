@@ -25,6 +25,7 @@ import { PcComponent } from './components/pc/pc.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { SmartphonesComponent } from './components/smartphones/smartphones.component';
 import { AccessoiresComponent } from './components/accessoires/accessoires.component';
+import { RechercheproduitsComponent } from './components/rechercheproduits/rechercheproduits.component';
 
 
 const config = new AuthServiceConfig([
@@ -57,7 +58,8 @@ export function provideConfig() {
     PcComponent,
     ContactComponent,
     SmartphonesComponent,
-    AccessoiresComponent
+    AccessoiresComponent,
+    RechercheproduitsComponent
   ],
   imports: [
     BrowserModule,
